@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Mar ❤️</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:black;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    section{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:40px;
+    }
+
+    h1{
+      font-size:4rem;
+      margin-bottom:20px;
+    }
+
+    p{
+      max-width:700px;
+      line-height:1.8;
+      font-size:1.2rem;
+      color:#d4d4d4;
+    }
+
+    button{
+      margin-top:40px;
+      padding:18px 35px;
+      border:none;
+      border-radius:20px;
+      background:#ff4d88;
+      color:white;
+      font-size:1rem;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+      width:100%;
+      max-width:1200px;
+      margin-top:60px;
+    }
+
+    .card{
+      border-radius:30px;
+      padding:40px;
+      min-height:350px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .green{
+      background:linear-gradient(180deg,#22c55e,#166534);
+    }
+
+    .orange{
+      background:linear-gradient(180deg,#fb923c,#991b1b);
+    }
+
+    .blue{
+      background:linear-gradient(180deg,#60a5fa,#1e3a8a);
+    }
+
+    .emoji{
+      font-size:5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<section id="intro">
+  <h1>Feliz cumpleaños ❤️</h1>
+
+  <p>
+    Hace un poco más de un año de conocernos...
+    <br><br>
+    y sin darme cuenta,
+    te convertiste en una de las personas más importantes de mi vida.
+  </p>
+
+  <button onclick="nextSection('letter')">
+    Abrir sorpresa ✨
+  </button>
+</section>
+
+<section id="letter" class="hidden">
+  <h1>Para ti 💌</h1>
+
+  <p>
+    Este año no quería darte algo normal.
+    <br><br>
+    Quería darte algo que pudiéramos recordar para siempre.
+    <br><br>
+    Así que preparé algo especial...
+  </p>
+
+  <button onclick="nextSection('keys')">
+    Continuar 🔑
+  </button>
+</section>
+
+<section id="keys" class="hidden">
+  <h1>Escoge una llave 🔑</h1>
+
+  <div class="card-container">
+
+    <div class="card green">
+      <div class="emoji">🔑</div>
+      <h2>Llave 1</h2>
+    </div>
+
+    <div class="card orange">
+      <div class="emoji">🔑</div>
+      <h2>Llave 2</h2>
+    </div>
+
+    <div class="card blue">
+      <div class="emoji">🔑</div>
+      <h2>Llave 3</h2>
+    </div>
+
+  </div>
+
+  <button onclick="nextSection('trips')">
+    Descubrir destinos ✈️
+  </button>
+</section>
+
+<section id="trips" class="hidden">
+  <h1>Tu regalo 🎁</h1>
+
+  <div class="card-container">
+
+    <div class="card green">
+      <div>
+        <h2>Costa Rica 🇨🇷</h2>
+        <br>
+        <p>
+          Playa, jungla y una aventura juntos ❤️
+        </p>
+      </div>
+
+      <h3>Juntos ✨</h3>
+    </div>
+
+    <div class="card orange">
+      <div>
+        <h2>Perú 🇵🇪</h2>
+        <br>
+        <p>
+          Paisajes increíbles, comida deliciosa y muchísimos recuerdos juntos ❤️
+        </p>
+      </div>
+
+      <h3>Juntos ✨</h3>
+    </div>
+
+    <div class="card blue">
+      <div>
+        <h2>Brasil 🇧🇷</h2>
+        <br>
+        <p>
+          Un viaje solo para ti.
+          <br><br>
+          Para descansar y vivir algo increíble ✨
+        </p>
+      </div>
+
+      <h3>Tu aventura ❤️</h3>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function nextSection(id){
+    document.querySelectorAll('section').forEach(section=>{
+      section.classList.add('hidden')
+    })
+
+    document.getElementById(id).classList.remove('hidden')
+
+    window.scrollTo(0,0)
+  }
+</script>
+
+</body>
+</html>
